@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field, EmailStr, field_validator, model_validator, computed_field
 from typing import Optional, Dict
+import pandas as pd
 
 
 class test(BaseModel):
@@ -62,3 +63,7 @@ data = {
 all = test(**data)
 
 pr(all)
+
+print(all.email)
+
+print(pd.DataFrame(all.model_dump()))
