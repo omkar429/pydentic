@@ -28,7 +28,7 @@ class test(BaseModel):
         return data
     
     @model_validator(mode='after')
-    def validetate(cls, model):
+    def validetate(model):
         if model.age > 60:
             if 'emergency' not in model.contact_detail:
                 raise ValueError('Eroo')
